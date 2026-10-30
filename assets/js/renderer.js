@@ -2,7 +2,8 @@
  * Canvas renderer for the meetup artwork.
  *
  * Landscape formats follow the reference layout (1920×1080): a header row
- * with two "block toolbar" boxes (WordPress logo + label, date + time), the
+ * with the WordPress logo and community name, a "block toolbar" box with
+ * the date and time, the
  * title inside a "selected block" frame, talks in monospace with speaker
  * photos on the right and logos at the bottom. Square, portrait and stories
  * formats stack the same pieces vertically.
@@ -433,7 +434,7 @@
 
 	/**
 	 * A box made of cells, like the block editor toolbar. Each cell has
-	 * items: { icon, w } | { logo, w } | { text, font, w } | { gap }.
+	 * items: { icon, w } | { text, font, w } | { gap }.
 	 */
 	function measureBox( cells, u ) {
 		cells.forEach( ( cell ) => {
@@ -464,9 +465,7 @@
 			cell.items.forEach( ( item ) => {
 				ctx.fillStyle = theme.ink;
 				ctx.strokeStyle = theme.ink;
-				if ( item.logo ) {
-					drawLogo( ctx, ix, y + ( h - item.w ) / 2, item.w, theme.accent );
-				} else if ( item.icon ) {
+				if ( item.icon ) {
 					ICONS[ item.icon ]( ctx, ix, y + ( h - item.w ) / 2, item.w, theme.box );
 				} else if ( item.text ) {
 					ctx.font = item.font;
@@ -481,23 +480,43 @@
 		return width;
 	}
 
-	/** Left box: WordPress logo and the label ("Meetup Presencial"). */
-	function headerCells( ctx, d, h, maxW ) {
-		const logo = h * 0.48;
-		const pad = h * 0.27;
-		let size = h * 0.39;
-		ctx.font = font( 600, size, SANS );
-		const fixed = pad * 2 + logo + h * 0.18;
-		const textW = ctx.measureText( d.header ).width;
-		if ( maxW && fixed + textW > maxW ) {
-			size = Math.max( h * 0.22, ( size * ( maxW - fixed ) ) / textW );
-			ctx.font = font( 600, size, SANS );
+	/**
+	 * Top left: WordPress logo and two lines of text, no box. The first line
+	 * names the community (regular), the second the edition (bold), e.g.
+	 * "Comunidade WordPress Joinville" / "#18 Presencial".
+	 * Returns { width, draw( x, y ) } for a row of height h.
+	 */
+	function headerBlock( ctx, d, h, maxW, theme ) {
+		const logo = h * 0.73;
+		const gap = h * 0.2;
+		const lines = [
+			{ text: d.header, weight: 400 },
+			{ text: d.subheader, weight: 700 },
+		].filter( ( line ) => line.text );
+		let size = lines.length > 1 ? h * 0.36 : h * 0.42;
+		const measure = () =>
+			lines.reduce( ( max, line ) => {
+				ctx.font = font( line.weight, size, SANS );
+				return Math.max( max, ctx.measureText( line.text ).width );
+			}, 0 );
+		let textW = measure();
+		if ( maxW && logo + gap + textW > maxW ) {
+			size = Math.max( h * 0.18, ( size * ( maxW - logo - gap ) ) / textW );
+			textW = measure();
 		}
-		const items = [ { logo: true, w: logo } ];
-		if ( d.header ) {
-			items.push( { gap: h * 0.18 }, { text: d.header, font: font( 600, size, SANS ), w: ctx.measureText( d.header ).width } );
-		}
-		return [ { pad, items } ];
+		const lh = size * 1.25;
+		return {
+			width: logo + ( lines.length ? gap + textW : 0 ),
+			draw( x, y ) {
+				drawLogo( ctx, x, y + ( h - logo ) / 2, logo, theme.accent );
+				const top = y + ( h - lines.length * lh ) / 2;
+				ctx.fillStyle = theme.ink;
+				lines.forEach( ( line, i ) => {
+					ctx.font = font( line.weight, size, SANS );
+					ctx.fillText( line.text, x + logo + gap, top + i * lh + lh * 0.78 );
+				} );
+			},
+		};
 	}
 
 	/** Right box: date and time with icons, or editor icons when empty. */
@@ -724,12 +743,12 @@
 		const top = 80 * u;
 		const rowH = 144 * u;
 
-		// Header: logo box on the left, date/time box on the right.
+		// Header: logo and community on the left, date/time box on the right.
 		const right = toolbarCells( ctx, d, rowH );
 		const rightW = measureBox( right, u );
-		const left = headerCells( ctx, d, rowH, W - 2 * M - rightW - 40 * u );
+		const left = headerBlock( ctx, d, rowH, W - 2 * M - rightW - 40 * u, theme );
 		ops.push( () => {
-			drawBox( ctx, left, M, top, rowH, u, theme );
+			left.draw( M, top );
 			drawBox( ctx, right, W - M - rightW, top, rowH, u, theme );
 		} );
 
@@ -810,9 +829,9 @@
 		const boxH = 104 * u;
 		const items = [];
 
-		// Logo box, then date/time box.
-		const left = headerCells( ctx, d, boxH, contentW );
-		items.push( { h: boxH, draw: ( y ) => drawBox( ctx, left, M, y, boxH, u, theme ) } );
+		// Logo and community, then the date/time box.
+		const left = headerBlock( ctx, d, boxH, contentW, theme );
+		items.push( { h: boxH, draw: ( y ) => left.draw( M, y ) } );
 		const right = toolbarCells( ctx, d, boxH );
 		items.push( { gap: 24 * u, h: boxH, draw: ( y ) => drawBox( ctx, right, M, y, boxH, u, theme ) } );
 
@@ -891,7 +910,7 @@
 	/**
 	 * Renders `data` onto `canvas` at the format's full resolution.
 	 *
-	 * data: { theme, header, dateText, timeText, title, titleWeight,
+	 * data: { theme, header, subheader, dateText, timeText, title, titleWeight,
 	 *         description, venue, highlight,
 	 *         talks: [{ title, speaker, photo: Image|null }],
 	 *         sponsors: [{ name, logo: Image|null }], landmark: Image|null }

@@ -99,7 +99,25 @@ msgstr ""
 msgid "Online"
 msgstr ""
 
-msgid "Text next to the logo"
+msgid "Edition number (optional)"
+msgstr ""
+
+msgid "E.g.: 18"
+msgstr ""
+
+msgid "Next to the logo, first line"
+msgstr ""
+
+msgid "E.g.: Joinville WordPress Community"
+msgstr ""
+
+msgid "Next to the logo, second line"
+msgstr ""
+
+msgid "E.g.: #18 In person"
+msgstr ""
+
+msgid "Filled in from the city, edition and event type. Edit them if you want."
 msgstr ""
 
 msgid "Date"
@@ -121,7 +139,10 @@ msgstr ""
 msgid "Meetup title (theme)"
 msgstr ""
 
-msgid "Goes inside the blue box. E.g.: Behind the scenes of WordPress projects"
+msgid "E.g.: Behind the scenes of WordPress projects"
+msgstr ""
+
+msgid "Goes inside the blue box."
 msgstr ""
 
 msgid "Title style"
@@ -134,6 +155,9 @@ msgid "Bold"
 msgstr ""
 
 msgid "Description (optional)"
+msgstr ""
+
+msgid "E.g.: Learn about the challenges and solutions behind real projects built with WordPress."
 msgstr ""
 
 msgid "Footer highlight (optional)"
@@ -152,6 +176,9 @@ msgid "Show the venue on the artwork"
 msgstr ""
 
 msgid "Registration link"
+msgstr ""
+
+msgid "E.g.: https://www.meetup.com/your-group/events/…"
 msgstr ""
 
 msgid "The event page on Meetup.com or wherever people RSVP. Used in the announcement texts."
@@ -226,7 +253,13 @@ msgstr ""
 msgid "Talk title"
 msgstr ""
 
+msgid "E.g.: Getting started with the block editor"
+msgstr ""
+
 msgid "Speaker name"
+msgstr ""
+
+msgid "E.g.: Ana Souza"
 msgstr ""
 
 msgid "Upload logo"
@@ -236,6 +269,9 @@ msgid "Remove logo"
 msgstr ""
 
 msgid "Name (shown in the texts, and on the artwork if there is no logo)"
+msgstr ""
+
+msgid "E.g.: Example Agency"
 msgstr ""
 
 msgid "Missing info"
@@ -293,15 +329,6 @@ msgstr ""
 
 #, php-format
 msgid "%s characters"
-msgstr ""
-
-msgid "In-person Meetup"
-msgstr ""
-
-msgid "Online Meetup"
-msgstr ""
-
-msgid "WordPress Brasil Online Meetup"
 msgstr ""
 
 #, php-format

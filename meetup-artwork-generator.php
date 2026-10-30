@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Meetup Artwork Generator
  * Description:       Standardized artwork and announcement texts for WordPress community meetups (Meetup.com, Facebook, Instagram, LinkedIn, X and WhatsApp). On activation, the generator becomes the site front page.
- * Version:           1.3.0
+ * Version:           1.4.0
  * Requires at least: 6.5
  * Requires PHP:      7.4
  * Author:            Caio Ferreira and the WordPress Brasil community
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'WPBR_ARTES_VERSION', '1.3.0' );
+define( 'WPBR_ARTES_VERSION', '1.4.0' );
 define( 'WPBR_ARTES_FILE', __FILE__ );
 define( 'WPBR_ARTES_URL', plugin_dir_url( __FILE__ ) );
 define( 'WPBR_ARTES_PATH', plugin_dir_path( __FILE__ ) );

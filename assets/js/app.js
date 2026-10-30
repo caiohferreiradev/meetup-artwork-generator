@@ -53,7 +53,9 @@
 			landmark: 'igreja-pampulha',
 			watermark: '',
 			mode: 'presencial',
+			edition: '',
 			header: '',
+			subheader: '',
 			date: '',
 			time: '',
 			tz: 'BRT',
@@ -68,7 +70,7 @@
 			sponsors: [],
 			theme: 'light',
 			format: config.formats.length ? config.formats[ 0 ].id : '',
-			auto: { header: true },
+			auto: { header: true, subheader: true },
 		};
 	}
 
@@ -80,7 +82,8 @@
 				if ( saved.auto && saved.auto.title ) {
 					saved.title = '';
 				}
-				return Object.assign( defaults(), saved, { auto: { header: ! saved.auto || saved.auto.header !== false } } );
+				// The header used to hold "Meetup Presencial"; it is now generated again.
+				return Object.assign( defaults(), saved, { auto: { header: true, subheader: true } } );
 			}
 		} catch ( e ) {}
 		return defaults();
@@ -129,18 +132,22 @@
 		return state.cityName.trim() ? t( 'communityOf', state.cityName.trim() ) : t( 'community' );
 	}
 
-	function autoHeader() {
-		if ( state.mode === 'online' ) {
-			return state.city === 'brasil' ? t( 'headerBrasilOnline' ) : t( 'headerOnline' );
-		}
-		return t( 'headerInPerson' );
+	/** "#18 Presencial": edition number (optional) and event type. */
+	function autoSubheader() {
+		const edition = String( state.edition || '' ).replace( /^#/, '' ).trim();
+		const mode = state.mode === 'online' ? t( 'modeOnline' ) : t( 'modeInPerson' );
+		return edition ? `#${ edition } ${ mode }` : mode;
 	}
 
+	const AUTO = { header: communityName, subheader: autoSubheader };
+
 	function applyAuto() {
-		if ( state.auto.header || ! state.header ) {
-			state.header = autoHeader();
-			state.auto.header = true;
-		}
+		Object.keys( AUTO ).forEach( ( field ) => {
+			if ( state.auto[ field ] || ! state[ field ] ) {
+				state[ field ] = AUTO[ field ]();
+				state.auto[ field ] = true;
+			}
+		} );
 	}
 
 	/** Picks the city typed in the search field; unknown names become "other". */
@@ -225,8 +232,8 @@
 		} else {
 			state[ field ] = el.type === 'checkbox' ? el.checked : el.value;
 		}
-		if ( field === 'header' ) {
-			state.auto.header = el.value.trim() === '';
+		if ( AUTO[ field ] ) {
+			state.auto[ field ] = el.value.trim() === '';
 		} else {
 			applyAuto();
 			syncFields();
@@ -515,6 +522,7 @@
 		return {
 			theme: state.theme,
 			header: state.header.trim(),
+			subheader: state.subheader.trim(),
 			dateText: dateText( state.date ),
 			timeText: timeText( state.time, state.tz.trim().toUpperCase() ),
 			title: state.title.trim() || t( 'titlePlaceholder' ),

@@ -40,12 +40,10 @@ T = {
     ('About the event', None): ('Sobre o evento', 'Sobre el evento'),
     ('Event type', None): ('Tipo de evento', 'Tipo de evento'),
     ('In person', None): ('Presencial', 'Presencial'),
-    ('Text next to the logo', None): ('Texto ao lado do logo', 'Texto junto al logo'),
     ('Date', None): ('Data', 'Fecha'),
     ('Time', None): ('Horário', 'Hora'),
     ('Without date and time, the artwork shows the block editor toolbar.', None): ('Sem data e horário, a arte mostra a barra de ferramentas do editor de blocos.', 'Sin fecha ni hora, el arte muestra la barra de herramientas del editor de bloques.'),
     ('Meetup title (theme)', None): ('Título do meetup (tema)', 'Título del meetup (tema)'),
-    ('Goes inside the blue box. E.g.: Behind the scenes of WordPress projects', None): ('Fica dentro do campo azul. Ex.: Bastidores de projetos com WordPress', 'Va dentro del recuadro azul. Ej.: Detrás de escena de proyectos con WordPress'),
     ('Title style', None): ('Estilo do título', 'Estilo del título'),
     ('Regular', None): ('Normal', 'Normal'),
     ('Bold', None): ('Negrito', 'Negrita'),
@@ -103,10 +101,7 @@ T = {
     ('Text for %s', None): ('Texto para %s', 'Texto para %s'),
     ('%1$s of %2$s characters', None): ('%1$s de %2$s caracteres', '%1$s de %2$s caracteres'),
     ('%s characters', None): ('%s caracteres', '%s caracteres'),
-    ('In-person Meetup', None): ('Meetup Presencial', 'Meetup Presencial'),
-    ('Online Meetup', None): ('Meetup Online', 'Meetup Online'),
-    ('WordPress Brasil Online Meetup', None): ('WordPress Brasil Meetup Online', 'WordPress Brasil Meetup Online'),
-    ('%s WordPress Community', None): ('Comunidade WordPress de %s', 'Comunidad WordPress de %s'),
+    ('%s WordPress Community', None): ('Comunidade WordPress %s', 'Comunidad WordPress de %s'),
     ('WordPress Community', None): ('Comunidade WordPress', 'Comunidad WordPress'),
     ('Getting started with the block editor', None): ('Primeiros passos com o editor de blocos', 'Primeros pasos con el editor de bloques'),
     ('Free event', None): ('Evento gratuito', 'Evento gratuito'),
@@ -222,6 +217,20 @@ T = {
     ('WhatsApp and Instagram', None): ('WhatsApp e Instagram', 'WhatsApp e Instagram'),
 }
 T[('WhatsApp and Instagram', None)] = ('WhatsApp e Instagram', 'WhatsApp e Instagram')
+T[('Edition number (optional)', None)] = ('Número da edição (opcional)', 'Número de edición (opcional)')
+T[('E.g.: 18', None)] = ('Ex.: 18', 'Ej.: 18')
+T[('Next to the logo, first line', None)] = ('Ao lado do logo, primeira linha', 'Junto al logo, primera línea')
+T[('E.g.: Joinville WordPress Community', None)] = ('Ex.: Comunidade WordPress Joinville', 'Ej.: Comunidad WordPress de Joinville')
+T[('Next to the logo, second line', None)] = ('Ao lado do logo, segunda linha', 'Junto al logo, segunda línea')
+T[('E.g.: #18 In person', None)] = ('Ex.: #18 Presencial', 'Ej.: #18 Presencial')
+T[('Filled in from the city, edition and event type. Edit them if you want.', None)] = ('Preenchidas a partir da cidade, da edição e do tipo de evento. Edite se quiser.', 'Se completan a partir de la ciudad, la edición y el tipo de evento. Edítalas si quieres.')
+T[('E.g.: Behind the scenes of WordPress projects', None)] = ('Ex.: Bastidores de projetos com WordPress', 'Ej.: Detrás de escena de proyectos con WordPress')
+T[('Goes inside the blue box.', None)] = ('Fica dentro do campo azul.', 'Va dentro del recuadro azul.')
+T[('E.g.: Learn about the challenges and solutions behind real projects built with WordPress.', None)] = ('Ex.: Conheça os desafios e as soluções por trás de projetos reais feitos com WordPress.', 'Ej.: Conoce los desafíos y las soluciones detrás de proyectos reales hechos con WordPress.')
+T[('E.g.: https://www.meetup.com/your-group/events/…', None)] = ('Ex.: https://www.meetup.com/seu-grupo/events/…', 'Ej.: https://www.meetup.com/tu-grupo/events/…')
+T[('E.g.: Getting started with the block editor', None)] = ('Ex.: Primeiros passos com o editor de blocos', 'Ej.: Primeros pasos con el editor de bloques')
+T[('E.g.: Ana Souza', None)] = ('Ex.: Ana Souza', 'Ej.: Ana Souza')
+T[('E.g.: Example Agency', None)] = ('Ex.: Agência Exemplo', 'Ej.: Agencia Ejemplo')
 T[('Time zone', None)] = ('Fuso horário', 'Zona horaria')
 T[('TZ', 'time zone abbreviation')] = ('Fuso', 'Zona')
 

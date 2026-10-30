@@ -67,8 +67,19 @@ function wpbr_artes_render_generator() {
 					</fieldset>
 
 					<div class="wpbr-field">
-						<label for="wpbr-header"><?php esc_html_e( 'Text next to the logo', 'meetup-artwork-generator' ); ?></label>
-						<input type="text" id="wpbr-header" data-field="header" maxlength="40">
+						<label for="wpbr-edition"><?php esc_html_e( 'Edition number (optional)', 'meetup-artwork-generator' ); ?></label>
+						<input type="text" id="wpbr-edition" data-field="edition" inputmode="numeric" maxlength="6" placeholder="<?php esc_attr_e( 'E.g.: 18', 'meetup-artwork-generator' ); ?>">
+					</div>
+
+					<div class="wpbr-field">
+						<label for="wpbr-header"><?php esc_html_e( 'Next to the logo, first line', 'meetup-artwork-generator' ); ?></label>
+						<input type="text" id="wpbr-header" data-field="header" maxlength="50" aria-describedby="wpbr-header-help" placeholder="<?php esc_attr_e( 'E.g.: Joinville WordPress Community', 'meetup-artwork-generator' ); ?>">
+					</div>
+
+					<div class="wpbr-field">
+						<label for="wpbr-subheader"><?php esc_html_e( 'Next to the logo, second line', 'meetup-artwork-generator' ); ?></label>
+						<input type="text" id="wpbr-subheader" data-field="subheader" maxlength="40" aria-describedby="wpbr-header-help" placeholder="<?php esc_attr_e( 'E.g.: #18 In person', 'meetup-artwork-generator' ); ?>">
+						<p class="wpbr-help" id="wpbr-header-help"><?php esc_html_e( 'Filled in from the city, edition and event type. Edit them if you want.', 'meetup-artwork-generator' ); ?></p>
 					</div>
 
 					<div class="wpbr-field-row">
@@ -89,8 +100,8 @@ function wpbr_artes_render_generator() {
 
 					<div class="wpbr-field">
 						<label for="wpbr-title"><?php esc_html_e( 'Meetup title (theme)', 'meetup-artwork-generator' ); ?></label>
-						<textarea id="wpbr-title" data-field="title" rows="2" maxlength="90" aria-describedby="wpbr-title-help"></textarea>
-						<p class="wpbr-help" id="wpbr-title-help"><?php esc_html_e( 'Goes inside the blue box. E.g.: Behind the scenes of WordPress projects', 'meetup-artwork-generator' ); ?></p>
+						<textarea id="wpbr-title" data-field="title" rows="2" maxlength="90" aria-describedby="wpbr-title-help" placeholder="<?php esc_attr_e( 'E.g.: Behind the scenes of WordPress projects', 'meetup-artwork-generator' ); ?>"></textarea>
+						<p class="wpbr-help" id="wpbr-title-help"><?php esc_html_e( 'Goes inside the blue box.', 'meetup-artwork-generator' ); ?></p>
 					</div>
 
 					<fieldset class="wpbr-field">
@@ -103,7 +114,7 @@ function wpbr_artes_render_generator() {
 
 					<div class="wpbr-field">
 						<label for="wpbr-description"><?php esc_html_e( 'Description (optional)', 'meetup-artwork-generator' ); ?></label>
-						<textarea id="wpbr-description" data-field="description" rows="3" maxlength="200"></textarea>
+						<textarea id="wpbr-description" data-field="description" rows="3" maxlength="200" placeholder="<?php esc_attr_e( 'E.g.: Learn about the challenges and solutions behind real projects built with WordPress.', 'meetup-artwork-generator' ); ?>"></textarea>
 					</div>
 
 					<div class="wpbr-field">
@@ -122,7 +133,7 @@ function wpbr_artes_render_generator() {
 
 					<div class="wpbr-field">
 						<label for="wpbr-link"><?php esc_html_e( 'Registration link', 'meetup-artwork-generator' ); ?></label>
-						<input type="url" id="wpbr-link" data-field="link" inputmode="url" aria-describedby="wpbr-link-help" placeholder="https://www.meetup.com/…">
+						<input type="url" id="wpbr-link" data-field="link" inputmode="url" aria-describedby="wpbr-link-help" placeholder="<?php esc_attr_e( 'E.g.: https://www.meetup.com/your-group/events/…', 'meetup-artwork-generator' ); ?>">
 						<p class="wpbr-help" id="wpbr-link-help"><?php esc_html_e( 'The event page on Meetup.com or wherever people RSVP. Used in the announcement texts.', 'meetup-artwork-generator' ); ?></p>
 					</div>
 				</section>
@@ -207,8 +218,8 @@ function wpbr_artes_render_generator() {
 						<input type="file" accept="image/*" hidden>
 					</div>
 					<div class="wpbr-item__fields">
-						<label><?php esc_html_e( 'Talk title', 'meetup-artwork-generator' ); ?><input type="text" data-key="title" maxlength="80"></label>
-						<label><?php esc_html_e( 'Speaker name', 'meetup-artwork-generator' ); ?><input type="text" data-key="speaker" maxlength="60"></label>
+						<label><?php esc_html_e( 'Talk title', 'meetup-artwork-generator' ); ?><input type="text" data-key="title" maxlength="80" placeholder="<?php esc_attr_e( 'E.g.: Getting started with the block editor', 'meetup-artwork-generator' ); ?>"></label>
+						<label><?php esc_html_e( 'Speaker name', 'meetup-artwork-generator' ); ?><input type="text" data-key="speaker" maxlength="60" placeholder="<?php esc_attr_e( 'E.g.: Ana Souza', 'meetup-artwork-generator' ); ?>"></label>
 					</div>
 				</div>
 			</div>
@@ -234,7 +245,7 @@ function wpbr_artes_render_generator() {
 						<input type="file" accept="image/*" hidden>
 					</div>
 					<div class="wpbr-item__fields">
-						<label><?php esc_html_e( 'Name (shown in the texts, and on the artwork if there is no logo)', 'meetup-artwork-generator' ); ?><input type="text" data-key="name" maxlength="40"></label>
+						<label><?php esc_html_e( 'Name (shown in the texts, and on the artwork if there is no logo)', 'meetup-artwork-generator' ); ?><input type="text" data-key="name" maxlength="40" placeholder="<?php esc_attr_e( 'E.g.: Example Agency', 'meetup-artwork-generator' ); ?>"></label>
 					</div>
 				</div>
 			</div>

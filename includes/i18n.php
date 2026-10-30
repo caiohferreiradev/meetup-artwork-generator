@@ -203,9 +203,8 @@ function wpbr_artes_js_strings() {
 		'charsOf'            => __( '%1$s of %2$s characters', 'meetup-artwork-generator' ),
 		/* translators: %s: number of characters. */
 		'chars'              => __( '%s characters', 'meetup-artwork-generator' ),
-		'headerInPerson'     => __( 'In-person Meetup', 'meetup-artwork-generator' ),
-		'headerOnline'       => __( 'Online Meetup', 'meetup-artwork-generator' ),
-		'headerBrasilOnline' => __( 'WordPress Brasil Online Meetup', 'meetup-artwork-generator' ),
+		'modeInPerson'       => __( 'In person', 'meetup-artwork-generator' ),
+		'modeOnline'         => __( 'Online', 'meetup-artwork-generator' ),
 		/* translators: %s: city name. */
 		'communityOf'        => __( '%s WordPress Community', 'meetup-artwork-generator' ),
 		'community'          => __( 'WordPress Community', 'meetup-artwork-generator' ),
