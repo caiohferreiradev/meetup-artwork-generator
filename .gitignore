@@ -1,0 +1,4 @@
+# Build output (tools/build-playground-bundle.sh).
+/dist/
+.DS_Store
+__pycache__/

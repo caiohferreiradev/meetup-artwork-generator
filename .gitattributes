@@ -1,0 +1,8 @@
+# Keep development files out of GitHub's "Download ZIP" archives.
+/.github export-ignore
+/.wordpress-org export-ignore
+/tools export-ignore
+/playground export-ignore
+.distignore export-ignore
+.gitattributes export-ignore
+/dist export-ignore

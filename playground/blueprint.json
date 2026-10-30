@@ -1,0 +1,36 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "Meetup Artwork Generator",
+		"author": "WordPress Brasil community",
+		"description": "A WordPress site whose front page generates meetup artwork and announcement texts for Meetup.com, Facebook, Instagram, LinkedIn, X and WhatsApp. Available in Portuguese, English and Spanish.",
+		"categories": [ "Community", "Events" ]
+	},
+	"landingPage": "/",
+	"preferredVersions": {
+		"php": "8.3",
+		"wp": "latest"
+	},
+	"siteOptions": {
+		"blogname": "Meetup Artwork Generator"
+	},
+	"steps": [
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "git:directory",
+				"url": "https://github.com/caiohferreiradev/meetup-artwork-generator",
+				"ref": "main",
+				"refType": "branch",
+				"path": "/"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "meetup-artwork-generator"
+			},
+			"progress": {
+				"caption": "Installing the meetup artwork generator"
+			}
+		}
+	]
+}

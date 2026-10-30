@@ -1,0 +1,602 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gerador de Artes\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: meetup-artwork-generator\n"
+
+msgid "Sugarloaf Mountain"
+msgstr ""
+
+msgid "Pampulha Church"
+msgstr ""
+
+msgid "MASP"
+msgstr ""
+
+msgid "Curitiba Botanical Garden"
+msgstr ""
+
+msgid "Usina do Gasômetro"
+msgstr ""
+
+msgid "Hercílio Luz Bridge"
+msgstr ""
+
+msgid "National Congress"
+msgstr ""
+
+msgid "Castle Tower"
+msgstr ""
+
+msgid "Fortaleza Cathedral"
+msgstr ""
+
+msgid "Penha Convent"
+msgstr ""
+
+msgid "Goiás Avenue Clock"
+msgstr ""
+
+msgid "São Carlos Cathedral"
+msgstr ""
+
+msgid "São Tomé Lighthouse"
+msgstr ""
+
+msgid "Cristo Luz and the waterfront"
+msgstr ""
+
+msgid "Rio Branco Palace"
+msgstr ""
+
+msgid "City buildings (generic)"
+msgstr ""
+
+msgid "Brazil"
+msgstr ""
+
+msgid "The generator needs JavaScript enabled in your browser."
+msgstr ""
+
+msgid "Your community"
+msgstr ""
+
+msgid "City"
+msgstr ""
+
+msgid "Type to search, e.g.: Curitiba"
+msgstr ""
+
+msgid "Pick a community from the list or type any city."
+msgstr ""
+
+msgid "Landmark in the background"
+msgstr ""
+
+msgid "Shows up as a shadow in the bottom right corner of the artwork."
+msgstr ""
+
+msgid "Your image"
+msgstr ""
+
+msgid "Upload image"
+msgstr ""
+
+msgid "A photo or drawing of a local landmark. It becomes a blue watermark: dark areas show up, light areas disappear. Images with a transparent background work best."
+msgstr ""
+
+msgid "About the event"
+msgstr ""
+
+msgid "Event type"
+msgstr ""
+
+msgid "In person"
+msgstr ""
+
+msgid "Online"
+msgstr ""
+
+msgid "Text next to the logo"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Time zone"
+msgstr ""
+
+msgctxt "time zone abbreviation"
+msgid "TZ"
+msgstr ""
+
+msgid "Without date and time, the artwork shows the block editor toolbar."
+msgstr ""
+
+msgid "Meetup title (theme)"
+msgstr ""
+
+msgid "Goes inside the blue box. E.g.: Behind the scenes of WordPress projects"
+msgstr ""
+
+msgid "Title style"
+msgstr ""
+
+msgid "Regular"
+msgstr ""
+
+msgid "Bold"
+msgstr ""
+
+msgid "Description (optional)"
+msgstr ""
+
+msgid "Footer highlight (optional)"
+msgstr ""
+
+msgid "E.g.: Free event"
+msgstr ""
+
+msgid "Venue and address"
+msgstr ""
+
+msgid "E.g.: University auditorium · 123 Example St – Downtown"
+msgstr ""
+
+msgid "Show the venue on the artwork"
+msgstr ""
+
+msgid "Registration link"
+msgstr ""
+
+msgid "The event page on Meetup.com or wherever people RSVP. Used in the announcement texts."
+msgstr ""
+
+msgid "Talks and speakers"
+msgstr ""
+
+msgid "Add talk"
+msgstr ""
+
+msgid "Supporters and sponsors"
+msgstr ""
+
+msgid "Logos of whoever supports or hosts the event. PNG with a transparent background works best."
+msgstr ""
+
+msgid "Add logo"
+msgstr ""
+
+msgid "Start over"
+msgstr ""
+
+msgid "Choose the format and download"
+msgstr ""
+
+msgid "Artwork colors"
+msgstr ""
+
+msgid "Light"
+msgstr ""
+
+msgid "Dark"
+msgstr ""
+
+msgid "Artwork format"
+msgstr ""
+
+msgid "Artwork preview"
+msgstr ""
+
+msgid "Download this artwork"
+msgstr ""
+
+msgid "Download all formats"
+msgstr ""
+
+msgid "Announcement texts"
+msgstr ""
+
+msgid "optional"
+msgstr ""
+
+msgid "Ready-made texts with the event details, written the way each network works. Open a network, review and copy. Anything [in brackets] still needs to be filled in the form."
+msgstr ""
+
+msgid "Move up"
+msgstr ""
+
+msgid "Move down"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Photo"
+msgstr ""
+
+msgid "Remove photo"
+msgstr ""
+
+msgid "Talk title"
+msgstr ""
+
+msgid "Speaker name"
+msgstr ""
+
+msgid "Upload logo"
+msgstr ""
+
+msgid "Remove logo"
+msgstr ""
+
+msgid "Name (shown in the texts, and on the artwork if there is no logo)"
+msgstr ""
+
+msgid "Missing info"
+msgstr ""
+
+msgid "Copy text"
+msgstr ""
+
+msgid "Other city…"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "My own image…"
+msgstr ""
+
+msgid "Your meetup title"
+msgstr ""
+
+#, php-format
+msgid "WordPress %s (online)"
+msgstr ""
+
+#, php-format
+msgid "Talk %d"
+msgstr ""
+
+#, php-format
+msgid "Supporter %d"
+msgstr ""
+
+msgid "This image could not be opened. Try a JPG or PNG file."
+msgstr ""
+
+msgid "The text is too long for this format; try shortening the title or the description."
+msgstr ""
+
+msgid "Erase everything you filled in and start a new artwork?"
+msgstr ""
+
+msgid "Text copied!"
+msgstr ""
+
+msgid "Could not copy automatically. The text is selected: press Ctrl+C (or Cmd+C)."
+msgstr ""
+
+#, php-format
+msgid "Text for %s"
+msgstr ""
+
+#, php-format
+msgid "%1$s of %2$s characters"
+msgstr ""
+
+#, php-format
+msgid "%s characters"
+msgstr ""
+
+msgid "In-person Meetup"
+msgstr ""
+
+msgid "Online Meetup"
+msgstr ""
+
+msgid "WordPress Brasil Online Meetup"
+msgstr ""
+
+#, php-format
+msgid "%s WordPress Community"
+msgstr ""
+
+msgid "WordPress Community"
+msgstr ""
+
+msgid "Getting started with the block editor"
+msgstr ""
+
+msgid "Free event"
+msgstr ""
+
+msgid "[date]"
+msgstr ""
+
+msgid "[time]"
+msgstr ""
+
+msgid "[venue and address]"
+msgstr ""
+
+msgid "[registration link]"
+msgstr ""
+
+msgid "[city]"
+msgstr ""
+
+#, php-format
+msgid "A new %s meetup is coming up!"
+msgstr ""
+
+#, php-format
+msgid "A new online %s meetup is coming up!"
+msgstr ""
+
+msgid "An open gathering to learn, share experiences and meet people who use WordPress all over Brazil."
+msgstr ""
+
+#, php-format
+msgid "An open gathering to learn, share experiences and meet other people who use WordPress in %s."
+msgstr ""
+
+msgctxt "before Sunday"
+msgid "On"
+msgstr ""
+
+msgctxt "before Monday"
+msgid "On"
+msgstr ""
+
+msgctxt "before Tuesday"
+msgid "On"
+msgstr ""
+
+msgctxt "before Wednesday"
+msgid "On"
+msgstr ""
+
+msgctxt "before Thursday"
+msgid "On"
+msgstr ""
+
+msgctxt "before Friday"
+msgid "On"
+msgstr ""
+
+msgctxt "before Saturday"
+msgid "On"
+msgstr ""
+
+msgctxt "before a missing date"
+msgid "On"
+msgstr ""
+
+#, php-format
+msgid "at %s"
+msgstr ""
+
+#, php-format
+msgid "we meet in %s."
+msgstr ""
+
+msgid "we meet online."
+msgstr ""
+
+msgid "Brasília time"
+msgstr ""
+
+msgid "Acre time"
+msgstr ""
+
+msgid "Manaus time"
+msgstr ""
+
+msgid "When:"
+msgstr ""
+
+msgid "Where:"
+msgstr ""
+
+#, php-format
+msgid "%1$s — with %2$s"
+msgstr ""
+
+msgctxt "hashtag, no spaces"
+msgid "WordPressCommunity"
+msgstr ""
+
+msgid "Online. The streaming link is available here on Meetup for everyone who RSVPs."
+msgstr ""
+
+msgid "SCHEDULE"
+msgstr ""
+
+msgid "WHO IS IT FOR"
+msgstr ""
+
+msgid "For people who use WordPress, build sites, develop or are just getting started. No experience needed: the community is open and welcoming."
+msgstr ""
+
+msgid "SUPPORT"
+msgstr ""
+
+#, php-format
+msgid "Special thanks for the support: %s."
+msgstr ""
+
+msgid "RSVP here on Meetup to get the event reminders. If you can no longer make it, update your RSVP to free up the spot for someone else."
+msgstr ""
+
+msgid "WordPress community events follow the community code of conduct: respect and a welcoming space come first."
+msgstr ""
+
+msgid "On the schedule:"
+msgstr ""
+
+#, php-format
+msgid "Save your spot: %s"
+msgstr ""
+
+#, php-format
+msgid "Thanks for the support, %s!"
+msgstr ""
+
+msgid "Know someone who would enjoy this? Tag them in the comments or share!"
+msgstr ""
+
+msgid "Speakers:"
+msgstr ""
+
+msgid "Registration via the link in bio."
+msgstr ""
+
+msgid "Tag who is coming with you!"
+msgstr ""
+
+#, php-format
+msgid "Venue: %s"
+msgstr ""
+
+#, php-format
+msgid "Registration: %s"
+msgstr ""
+
+msgid "Know someone who would enjoy this? Share it or tag them in the comments."
+msgstr ""
+
+#, php-format
+msgid "WordPress meetup in %s"
+msgstr ""
+
+msgid "Online WordPress meetup"
+msgstr ""
+
+#, php-format
+msgid "%d talks on the schedule"
+msgstr ""
+
+#, php-format
+msgid "in %s"
+msgstr ""
+
+msgid "online"
+msgstr ""
+
+msgid "Schedule:"
+msgstr ""
+
+msgid "Register:"
+msgstr ""
+
+msgid "Forward this to anyone who would enjoy it!"
+msgstr ""
+
+msgid "Event description"
+msgstr ""
+
+msgid "Paste it in the event description. Use the artwork title as the event name and upload the \"Meetup.com\" artwork as the cover image."
+msgstr ""
+
+msgid "Post or event"
+msgstr ""
+
+msgid "Post it with the \"Facebook\" or \"Square\" artwork. If you create a Facebook event, use this text as its description."
+msgstr ""
+
+msgid "Post caption"
+msgstr ""
+
+msgid "Links in captions are not clickable on Instagram: put the registration link in your bio or use the link sticker in Stories. Tag the speakers and supporters on the image."
+msgstr ""
+
+msgid "Post"
+msgstr ""
+
+msgid "After pasting, tag the speakers and supporting companies by typing @ before their names. This increases the reach of the post."
+msgstr ""
+
+msgid "Up to 280 characters"
+msgstr ""
+
+msgid "The text is adjusted to fit 280 characters (each link counts as 23). To detail the schedule, reply to your own post."
+msgstr ""
+
+msgid "Groups and lists"
+msgstr ""
+
+msgid "Asterisks make text bold on WhatsApp. Send it with the \"Square\" artwork (chats) or the \"Status / Stories\" one (status)."
+msgstr ""
+
+msgid "Meetup Artwork Generator"
+msgstr ""
+
+msgid "Open generator"
+msgstr ""
+
+msgid "Meetup.com"
+msgstr ""
+
+msgid "Event cover"
+msgstr ""
+
+msgid "Facebook"
+msgstr ""
+
+msgid "Facebook / LinkedIn"
+msgstr ""
+
+msgid "Link post"
+msgstr ""
+
+msgid "X (Twitter)"
+msgstr ""
+
+msgid "Image post"
+msgstr ""
+
+msgid "Square"
+msgstr ""
+
+msgid "Instagram, Facebook and WhatsApp"
+msgstr ""
+
+msgid "Portrait"
+msgstr ""
+
+msgid "Instagram and Facebook feed"
+msgstr ""
+
+msgid "Status / Stories"
+msgstr ""
+
+msgid "WhatsApp and Instagram"
+msgstr ""
+
+msgid "Skip to the generator"
+msgstr ""
+
+msgid "WordPress Brazil Community"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "Change"
+msgstr ""
+
+msgid "Dashboard"
+msgstr ""
+
+msgid "Fill in your meetup details, check the preview and download the artwork in the format of each network. At the end, copy the ready-made texts to spread the word. Everything stays saved in this browser until you start over."
+msgstr ""
+
+msgid "Made by and for the WordPress community in Brazil. Images and texts are generated in your browser and are not sent to any server."
+msgstr ""

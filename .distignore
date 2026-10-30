@@ -1,0 +1,13 @@
+# Files left out of the distributed plugin zip.
+/.git
+/.github
+/.wordpress-org
+/tools
+/playground
+.distignore
+.gitattributes
+.DS_Store
+/dist
+/README.md
+/LICENSE
+/.gitignore
