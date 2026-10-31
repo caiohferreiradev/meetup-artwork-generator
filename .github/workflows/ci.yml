@@ -1,0 +1,54 @@
+name: Tests
+on:
+  push:
+  pull_request:
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+      - run: npm run lint
+      - name: Verify release archive excludes development files
+        run: |
+          tools/build-playground-bundle.sh
+          if unzip -Z1 "dist/$(basename "$PWD").zip" | grep -E '(^|/)(node_modules|tests|playwright-report|test-results)(/|$)|(^|/)(package(-lock)?\.json|playwright\.config\.js)$'; then
+            echo 'Development files found in release archive' >&2
+            exit 1
+          fi
+  e2e:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - wp: '6.5.14'
+            php: '7.4'
+          - wp: '7.1.4'
+            php: '8.3'
+    env:
+      WP_VERSION: ${{ matrix.wp }}
+      PHP_VERSION: ${{ matrix.php }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm test
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report-wp-${{ matrix.wp }}-php-${{ matrix.php }}
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 14

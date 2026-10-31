@@ -11,3 +11,10 @@
 /README.md
 /LICENSE
 /.gitignore
+/node_modules
+/tests
+/playwright-report
+/test-results
+/package.json
+/package-lock.json
+/playwright.config.js
