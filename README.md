@@ -35,6 +35,23 @@ Contributions are welcome, especially from communities outside Brazil.
 - **New language:** start from `languages/meetup-artwork-generator.pot`, add your translations to `tools/translations.py` and run `python3 tools/translations.py .`
 - **Bugs and ideas:** open an issue.
 
+### Automated checks
+
+Requirements: Node.js 20.18 or newer, npm, PHP 7.4 or newer, and internet access to download the browser and WordPress. Run from the plugin directory:
+
+```bash
+npm ci
+npx playwright install chromium
+npm run lint
+npm test
+```
+
+The tests start a disposable WordPress Playground server and copy the plugin into it; no existing WordPress site or Docker installation is used. By default they run WordPress 6.5.14 with PHP 7.4. To match the second CI configuration, run `WP_VERSION=7.1.4 PHP_VERSION=8.3 npm test`. Both versions are pinned in CI. The suite covers saved drafts, image controls, artwork rendering and downloads, and plugin activation and deactivation. On failure, Playwright saves traces and screenshots in `test-results/`; CI uploads the HTML report and results.
+
+Some regression tests are marked as expected failures while issues [#2](https://github.com/fellyph/meetup-artwork-generator/issues/2), [#4](https://github.com/fellyph/meetup-artwork-generator/issues/4), [#5](https://github.com/fellyph/meetup-artwork-generator/issues/5), [#6](https://github.com/fellyph/meetup-artwork-generator/issues/6), and [#7](https://github.com/fellyph/meetup-artwork-generator/issues/7) remain open. Playwright reports an unexpected pass as a failure: when a bug is fixed, remove the corresponding `test.fail` annotation. The quota test documents the current text-only fallback; warnings and image recovery are tracked in [#3](https://github.com/fellyph/meetup-artwork-generator/issues/3).
+
+Build the distribution bundle with `tools/build-playground-bundle.sh`. Development dependencies, test fixtures, and reports are excluded from the plugin ZIP via `.distignore`.
+
 ## Português
 
 Gerador de artes e textos de divulgação para meetups das comunidades WordPress. Clique em **Open in WordPress Playground** para usar no navegador; o gerador abre no idioma do seu navegador e dá para trocar no topo da página.
