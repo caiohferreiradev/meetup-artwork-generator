@@ -237,6 +237,7 @@
 		const shortDate = f.date ? new Intl.DateTimeFormat( locale, { day: '2-digit', month: '2-digit' } ).format( f.date ) : f.missing.date;
 		const auto = ! info.title;
 		const place = auto ? '' : ', ' + ( info.online ? t( 'xOnline' ) : t( 'xIn', f.city ) );
+		const timezone = info.online && info.tz ? ` (${ info.tz })` : '';
 		let hook = ! auto ? info.title : info.online ? t( 'xHookOnline' ) : t( 'xHookCity', f.city );
 
 		const first = info.talks[ 0 ];
@@ -246,7 +247,7 @@
 
 		const build = ( withTalk, withHighlight ) =>
 			compose( [
-				`📣 ${ hook } — ${ shortDate }, ${ f.time || f.missing.time }${ place }`,
+				`📣 ${ hook } — ${ shortDate }, ${ f.time || f.missing.time }${ timezone }${ place }`,
 				withTalk && talk,
 				withHighlight && info.highlight && `🎟️ ${ info.highlight }`,
 				'',
