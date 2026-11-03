@@ -59,7 +59,7 @@ function wpbr_artes_match_language( $locale ) {
 function wpbr_artes_requested_language() {
 	// Display preference only; nothing is saved besides a cookie.
 	// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-	$requested = isset( $_GET['wpbr_lang'] ) ? preg_replace( '/[^A-Za-z_]/', '', wp_unslash( $_GET['wpbr_lang'] ) ) : '';
+	$requested = isset( $_GET['wpbr_lang'] ) && is_string( $_GET['wpbr_lang'] ) ? preg_replace( '/[^A-Za-z_]/', '', wp_unslash( $_GET['wpbr_lang'] ) ) : '';
 	return isset( wpbr_artes_languages()[ $requested ] ) ? $requested : '';
 }
 
@@ -107,7 +107,7 @@ function wpbr_artes_current_language() {
 	if ( $requested ) {
 		return $requested;
 	}
-	$cookie = isset( $_COOKIE[ WPBR_ARTES_LANG_COOKIE ] ) ? preg_replace( '/[^A-Za-z_]/', '', wp_unslash( $_COOKIE[ WPBR_ARTES_LANG_COOKIE ] ) ) : '';
+	$cookie = isset( $_COOKIE[ WPBR_ARTES_LANG_COOKIE ] ) && is_string( $_COOKIE[ WPBR_ARTES_LANG_COOKIE ] ) ? preg_replace( '/[^A-Za-z_]/', '', wp_unslash( $_COOKIE[ WPBR_ARTES_LANG_COOKIE ] ) ) : '';
 	if ( isset( wpbr_artes_languages()[ $cookie ] ) ) {
 		return $cookie;
 	}
