@@ -11,6 +11,7 @@
 	const Copy = window.WPBRArtesCopy;
 	const LOCALE = config.locale || 'pt-BR';
 	const STORAGE_KEY = 'wpbr-artes-state-v1';
+	const STATE_VERSION = 2;
 	const OTHER = 'outra';
 	const CUSTOM = 'custom';
 	const $ = ( selector, root ) => ( root || document ).querySelector( selector );
@@ -48,6 +49,7 @@
 
 	function defaults() {
 		return {
+			version: STATE_VERSION,
 			city: 'belo-horizonte',
 			cityName: '',
 			landmark: 'igreja-pampulha',
@@ -78,12 +80,24 @@
 		try {
 			const saved = JSON.parse( window.localStorage.getItem( STORAGE_KEY ) || 'null' );
 			if ( saved && typeof saved === 'object' ) {
+				const auto = saved.auto && typeof saved.auto === 'object' ? saved.auto : {};
+				const needsMigration = typeof saved.version !== 'number' || saved.version < STATE_VERSION;
 				// Earlier versions filled the title with the community name.
-				if ( saved.auto && saved.auto.title ) {
+				if ( needsMigration && auto.title === true ) {
 					saved.title = '';
 				}
-				// The header used to hold "Meetup Presencial"; it is now generated again.
-				return Object.assign( defaults(), saved, { auto: { header: true, subheader: true } } );
+				const legacyHeader = needsMigration && ! Object.prototype.hasOwnProperty.call( saved, 'subheader' );
+				if ( legacyHeader && auto.header === false && typeof saved.header === 'string' ) {
+					// The old header described the event type, now the second line.
+					saved.subheader = saved.header;
+				}
+				return Object.assign( defaults(), saved, {
+					version: needsMigration ? STATE_VERSION : saved.version,
+					auto: {
+						header: legacyHeader ? true : auto.header !== false,
+						subheader: legacyHeader ? auto.header !== false : auto.subheader !== false,
+					},
+				} );
 			}
 		} catch ( e ) {}
 		return defaults();
